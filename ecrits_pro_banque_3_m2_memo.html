@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fiche mémo — Choisir l'écrit, viser un objectif</title>
+<style>
+:root{--prune:#8C1E70;--prune-fonce:#5E1349;--prune-clair:#F4E6EE;--accent:#C77BAA;
+ --vert:#283C28;--gris:#3C3C3C;--gris-moyen:#8A7A85;--filet:#E8DCE5;--creme:#FAF6F8;
+ --ok:#2F7A4F;--ko:#B23B3B;--amb:#B5852A;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--gris);
+ font-family:"Nunito","Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.62}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
+header.bandeau{background:var(--prune-fonce);color:#fff;padding:18px 0;border-bottom:4px solid var(--accent)}
+header.bandeau .wrap{padding-bottom:0}
+.chapitre{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#EAD3E3}
+.chapitre span{color:var(--accent);margin:0 6px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.25;margin:8px 0 4px;color:#fff}
+.sous{color:#EAD3E3;font-size:14.5px;margin:0}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:20px;color:var(--prune-fonce);
+ margin:34px 0 0;padding-bottom:8px;border-bottom:2px solid var(--filet)}
+h2 .num{color:var(--accent);margin-right:8px}
+h3{font-size:15px;color:var(--vert);margin:20px 0 8px;letter-spacing:.02em}
+.carte{background:#fff;border:1px solid var(--filet);border-radius:10px;padding:20px 22px;margin:18px 0;
+ box-shadow:0 1px 2px rgba(94,19,73,.05)}
+.enc{background:var(--prune-clair);border-left:5px solid var(--prune);padding:14px 18px;
+ border-radius:0 8px 8px 0;margin:18px 0;font-size:15.2px}
+.enc .t{display:block;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;
+ font-weight:800;color:var(--prune-fonce);margin-bottom:6px}
+.enc.al{background:#FBF4F4;border-left-color:var(--ko)}.enc.al .t{color:var(--ko)}
+.enc.ci{background:#FCF8F0;border-left-color:var(--amb)}.enc.ci .t{color:#8A6418}
+.situ{background:#FCF9FB;border:1px dashed var(--filet);border-radius:8px;padding:16px 18px;margin:16px 0;font-size:15.2px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.duo>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:15px 17px;font-size:14.8px}
+.duo .h{font-weight:800;color:var(--prune-fonce);margin-bottom:7px;font-size:14.5px}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.tri>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:14px 15px;font-size:14.3px}
+.quad{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.quad>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:12px 13px;font-size:13.6px}
+.quad .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13px;
+ text-transform:uppercase;letter-spacing:.04em}
+.tri .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13.5px;
+ text-transform:uppercase;letter-spacing:.05em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.8px;background:#fff}
+th,td{border:1px solid var(--filet);padding:9px 12px;text-align:left}
+thead th{background:var(--prune-clair);color:var(--prune-fonce);font-size:13.5px}
+tbody th{font-weight:600;color:var(--gris)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td,tr.tot th{background:#FBF3F8;font-weight:800;color:var(--prune-fonce)}
+.dl{display:inline-flex;align-items:center;gap:9px;background:var(--prune);color:#fff;text-decoration:none;
+ padding:11px 20px;border-radius:8px;font-weight:700;font-size:15px;margin:20px 0 4px}
+.dl:hover{background:var(--prune-fonce)}
+ol.q{padding-left:0;list-style:none;counter-reset:q}
+ol.q>li{margin:16px 0;padding-left:38px;position:relative}
+ol.q>li::before{counter-increment:q;content:counter(q);position:absolute;left:0;top:1px;
+ width:26px;height:26px;border-radius:50%;background:var(--prune-clair);color:var(--prune-fonce);
+ font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+b,strong{color:var(--vert)}
+footer{text-align:center;font-size:12.5px;color:var(--gris-moyen);padding:26px 18px 12px;
+ border-top:1px solid var(--filet);margin-top:44px}
+@media(max-width:860px){.quad{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.duo,.tri,.quad{grid-template-columns:1fr}h1{font-size:22px}}
+@media print{body{background:#fff}.dl{display:none}header.bandeau{background:#5E1349 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+td{vertical-align:top}td:first-child{white-space:nowrap}</style></head>
+<body>
+<header class="bandeau"><div class="wrap">
+ <div class="chapitre">Écrits professionnels · banque 3/5 <span>/</span> Module 2</div><h1>Choisir l'écrit, viser un objectif</h1><p class="sous">Fiche mémo — les écrits du conseiller et leur objectif</p>
+</div></header>
+<div class="wrap">
+<a class="dl" href="EPB_3_M2_Fiche_memo.pdf" download>⬇ Télécharger la fiche mémo (PDF)</a>
+
+<h2><span class="num">1 ·</span>Les écrits, du plus court au plus long</h2>
+<div class="carte">
+<table><thead><tr><th>Écrit</th><th>Usage</th><th>Limite</th><th>En banque</th></tr></thead><tbody>
+<tr><td><b>SMS</b></td><td>Confirmer, informer brièvement</td><td>160 caractères ; seul écrit qui tolère les abréviations</td><td>Rappel de rendez-vous, alerte de solde ; jamais de demande de code</td></tr>
+<tr><td><b>Chat</b></td><td>Répondre dans le canal choisi par le client</td><td>Un message envoyé ne se reprend pas : relire avant Entrée</td><td>Questions sur l'espace client, suivi d'une demande</td></tr>
+<tr><td><b>Mail</b></td><td>La plupart des situations ; pièces jointes ; lu sur tous les supports</td><td><b>Pas confidentiel</b></td><td>Liste de justificatifs, réponse à une réclamation, annonce d'un envoi</td></tr>
+<tr><td><b>Lettre</b></td><td>Confidentialité, valeur de preuve</td><td>Coût, délai</td><td>Documents qui engagent, informations personnelles détaillées</td></tr>
+<tr><td><b>Compte rendu</b></td><td>Rendre compte d'un entretien, d'une réunion</td><td>Plus long à rédiger</td><td>Note d'entretien au dossier client</td></tr>
+</tbody></table>
+<div class="enc al"><span class="t">LA RÈGLE DE CONFIDENTIALITÉ</span>Un mail peut être transféré, imprimé, lu par un tiers. On n'y écrit jamais un code, un mot de passe, un numéro complet de carte ou de compte.</div>
+</div>
+
+<h2><span class="num">2 ·</span>Identifier l'objectif avant d'écrire</h2>
+<div class="carte">
+<table><thead><tr><th>Objectif</th><th>Ce que le client doit savoir ou faire après lecture</th><th>Exemple</th></tr></thead><tbody>
+<tr><td><b>Informer</b></td><td>Savoir quelque chose</td><td>Votre carte vous sera adressée sous huit jours.</td></tr>
+<tr><td><b>Demander</b></td><td>Fournir ou faire quelque chose</td><td>Merci de nous transmettre votre dernier avis d'imposition.</td></tr>
+<tr><td><b>Confirmer</b></td><td>Avoir la trace d'un accord</td><td>Je vous confirme notre rendez-vous du 25 novembre à 10 h.</td></tr>
+<tr><td><b>Répondre à une réclamation</b></td><td>Comprendre ce qui s'est passé et ce qui va être fait</td><td>Les frais contestés correspondent à…</td></tr>
+<tr><td><b>Proposer</b></td><td>Pouvoir choisir</td><td>Je vous propose deux créneaux…</td></tr>
+</tbody></table>
+<div class="enc"><span class="t">LA MÉTHODE</span>Formulez l'objectif en une phrase avant d'écrire : « après lecture, le client doit… ». Si vous ne pouvez pas la formuler, votre mail ne sera pas clair. Deux objectifs ? Annoncez-les tous les deux dès le contexte.</div>
+</div>
+
+<h2><span class="num">3 ·</span>À retenir</h2>
+<div class="carte"><ol class="q"><li>Chaque écrit a son usage : on choisit celui qui sert l'objectif.</li><li>Le mail est polyvalent mais non confidentiel.</li><li>Un écrit = un objectif principal, formulé avant d'écrire.</li><li>Jamais de code ni de numéro complet dans un SMS, un chat ou un mail.</li></ol></div>
+
+
+<footer>TMK Performances - N° Siret : 49841924100027 - Code NAF : 8559A</footer>
+</div>
+</body></html>
